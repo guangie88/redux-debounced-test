@@ -8,6 +8,6 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    onIncreaseClick: () => dispatch(increaseAction)
+    onIncreaseClick: (key, time) => () => dispatch(increaseAction(key, time))
   };
 };

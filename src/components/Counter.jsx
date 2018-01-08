@@ -4,13 +4,17 @@ import { mapStateToProps, mapDispatchToProps } from "../mappers/CounterMapper";
 
 class Counter extends Component {
   render() {
-    const { value, onIncreaseClick } = this.props;
+    const { key, time, value, onIncreaseClick } = this.props;
+
     return (
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <button style={{ height: 35 }} onClick={onIncreaseClick}>
-          Increase
-        </button>
-        <span style={{ marginLeft: 5 }}>{value}</span>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <button style={{ height: 35 }} onClick={onIncreaseClick(key, time)}>
+            Increase
+          </button>
+          <span style={{ marginLeft: 5 }}>{value}</span>
+        </div>
+        <small>Debounce time: {time} ms</small>
       </div>
     );
   }
