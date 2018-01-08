@@ -1,6 +1,7 @@
 export const INCREASE = "INCREASE";
+export const DEBOUNCE_CHANGE = "DEBOUNCE_CHANGE";
 
-export const increaseAction = (key, time) => ({
+export const increase = (key, time) => ({
   type: INCREASE,
   meta: {
     debounce: {
@@ -9,3 +10,10 @@ export const increaseAction = (key, time) => ({
     }
   }
 });
+
+export const debounceChange = dval => {
+  return {
+    type: DEBOUNCE_CHANGE,
+    dval: dval
+  };
+};
